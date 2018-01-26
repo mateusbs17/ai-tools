@@ -1,0 +1,13 @@
+python:
+  build: ./python
+  volumes:
+    - ../machine_learning_examples/:/home/root/machine_learning_examples
+    - ${XAUTHORITY}:/tmp/.docker.xauth:rw
+  environment:
+    - DISPLAY=${DISPLAY}
+    - XAUTHORITY=/tmp/.docker.xauth:rw
+    - HOST_HOSTNAME=${HOSTNAME}
+  tty: true
+  net: host
+  privileged: true
+  
