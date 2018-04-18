@@ -9,5 +9,6 @@ python:
     - HOST_HOSTNAME=${HOSTNAME}
   tty: true
   net: host
+  working_dir: /home/root/machine_learning_examples
   privileged: true
   
