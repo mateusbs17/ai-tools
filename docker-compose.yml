@@ -1,7 +1,9 @@
 python:
   build: ./python
+  ports:
+    - 8888:8888
   volumes:
-    - ../machine_learning_examples/:/home/root/machine_learning_examples
+    - ../datasets/:/home/root/datasets
     - ${XAUTHORITY}:/tmp/.docker.xauth:rw
   environment:
     - DISPLAY=${DISPLAY}
@@ -9,6 +11,6 @@ python:
     - HOST_HOSTNAME=${HOSTNAME}
   tty: true
   net: host
-  working_dir: /home/root/machine_learning_examples
+  working_dir: /home/root/datasets
   privileged: true
   
